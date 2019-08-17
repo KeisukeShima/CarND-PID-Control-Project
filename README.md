@@ -1,6 +1,33 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Writeup
+
+### Implementation
+
+My PID implemantation is in `src/PID.cpp`.
+I use PID for vehicle's steering control and vehicle's speed control. You can see my implementation at `src/main.cpp`.
+
+### Reflection
+
+* Describe the effect each of the P, I, D components had in your implementation.
+
+P is proportional. When I increase P value, the steering angle is increase with CTE error.
+
+I is integral. When CTE has a offset, I value can decrease its offset value. In my project, I set small value of I because there is no offset.
+
+D is differential. When the vehicle is into curve, CTE value is increase rapidly. D value is effective to resolve such case. So I set D value bigger.
+
+* Describe how the final hyperparameters were chosen.
+
+Final parameter is here.
+
+steer: P=0.08, I=0.0004, D=6.5
+
+speed: P=0.5, I=0.0002, D=0.5
+
+I set parameter manually.
+
 ---
 
 ## Dependencies
